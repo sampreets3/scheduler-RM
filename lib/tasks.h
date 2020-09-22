@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <math.h>
 
+#define MAX_PRIORITY 10                 // Maximum priority levels available
+
+extern int hyperPeriod;                 // Stores the hyperperiod for simulation
+extern int numTasks;                    // Stores the number of tasks in the list
+
 enum taskState{
   BLOCKED=0,
   RUNNING=1,
@@ -25,3 +30,4 @@ struct taskControlBlock* init(char* tID, float c, float d);
 void sortTaskList();
 void createTask(char* tID, float c, float d);
 void showTaskSet();
+void assignPriority();

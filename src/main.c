@@ -7,6 +7,7 @@ int main(void) {
   createTask("T1", 5.0, 20.0);
   createTask("T1", 3.0, 5.0);
 
+  assignPriority();
   //show the task set
   showTaskSet();
 }

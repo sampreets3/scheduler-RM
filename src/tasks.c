@@ -1,5 +1,7 @@
 #include "tasks.h"
 
+int numTasks;
+
 /* function init : Initialises a new taskControlBlock element with given input
  * parameters. This function is not directly called by the user, but instead the
  * user calls the createTask() function, which in turn calls this function
@@ -14,7 +16,7 @@ struct taskControlBlock* init(char* tID, float c, float d) {
 	newTask->compTime = c;
   newTask->deadline = d;
 	newTask->utility  = c/d;
-	newTask->state    = RUNNING;
+	newTask->state    = READY;
 	newTask->tcbPrev  = NULL;
 	newTask->tcbNext  = NULL;
 	return newTask;
@@ -55,7 +57,10 @@ void sortTaskList() {
 
 void createTask(char* tID, float c, float d) {
 
-  // Initialise a new taskControlBlock with the given values
+	// Increment the number of tasks
+	numTasks++;
+
+	// Initialise a new taskControlBlock with the given values
 	struct taskControlBlock* newTCB = init(tID, c, d);
 	if(head == NULL) {
 		head = newTCB;      // If list is empty, add the task at the top of the list
@@ -71,18 +76,46 @@ void createTask(char* tID, float c, float d) {
   sortTaskList();     // Sorts the task list
 }
 
+/* function assignPriority : Assigns fixed priorities to each task
+ * based on their period and total number of tasks
+ */
+void assignPriority() {
+	int n = numTasks;
+	struct taskControlBlock* t;
+
+	/* Since the tasks are already sorted in ascending order of period
+	 * we can simply traverse through the list and assign descending
+	 * priorities in descending order
+	 */
+	while (t != NULL) {
+		t->priority = n--;
+		t = t->tcbNext;
+	}
+}
+
 void showTaskSet() {
 	struct taskControlBlock* temp = head;
 	printf("\n\n\t------ TASK STATS: ------ \n\n");
 	while(temp != NULL) {
     printf("\tIdentifier        : %s  \n", temp->taskID);
     printf("\tPriority          : %.2f\n", temp->priority);
-		printf("\tState             : %d  \n", temp->state);
+
+		if(temp->state == RUNNING) {
+			printf("\tState             : RUNNING  \n");
+		}
+		else if(temp->state == READY) {
+			printf("\tState             : READY  \n");
+		}
+		else {
+			printf("\tState             : BLOCKED  \n");
+		}
+
 		printf("\tComputation Time  : %.2f\n", temp->compTime);
 		printf("\tUtility	          : %.2f\n", temp->utility);
     printf("\tPeriod(=Deadline) : %.2f\n", temp->deadline);
     printf("\t------ * ------- \n");
 		temp = temp->tcbNext;
 	}
-	//printf("No of tasks : %d\n", noOfTasks);
+
+	printf("[INFO] Number of tasks : %d\n", numTasks);
 }
