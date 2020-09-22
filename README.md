@@ -8,8 +8,14 @@ Simulation of the behaviour of a Preemptive Fixed Priority Rate Monotonic Schedu
 ---
 
 ## Overview
-This project focusses on building a preemptive fixed priority rate monotonic task scheduler in C. Done as a part of the "Real-Time Scheduling" course at Ecole Centrale de Nantes, the aim of this project is to create a simulation of a standard RM scheduler in order to gain a better understanding at building Hard Real-Time systems. The choice of scheduling algorithm was kept to be Rate monotonic, since it is the easiest deterministic scheduler to implement. I have tried to design the software to be optimal to the best of my abilities, but if you can provide a more elegant solution, feel free to contribute to this project.
+This project focusses on building a preemptive fixed priority rate monotonic task scheduler in C. Done as a part of the **Real-Time Scheduling** course at Ecole Centrale de Nantes. The aim of this project is to create a simulation of a standard RM scheduler in order to gain a better understanding at building Hard Real-Time systems. The choice of scheduling algorithm was kept to be Rate monotonic, since it is the easiest deterministic scheduler to implement. I have tried to design the software to be optimal to the best of my abilities, but if you can provide a more elegant solution, feel free to contribute to this project.
 
+A simple outlook of the algorithm can be as follows:
+> Each task has its own Task Control Block, containing necessary information about the task. The algorithm will assign priorities offline,
+> and simulate for one hyperperiod. At each time interval of the simulation, the task with the highest priority will be executed, until there
+> are no more tasks to be executed.
+
+Also, before generating the schedule, it is imperative that we run schedulability tests on the task set to determine whether it is feasible or not.
 ---
 
 ## Usage
