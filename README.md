@@ -16,6 +16,7 @@ A simple outlook of the algorithm can be as follows:
 > are no more tasks to be executed.
 
 Also, before generating the schedule, it is imperative that we run schedulability tests on the task set to determine whether it is feasible or not.
+
 ---
 
 ## Usage
