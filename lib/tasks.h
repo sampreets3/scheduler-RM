@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
-#define MAX_PRIORITY 10                 // Maximum priority levels available
-
-extern int hyperPeriod;                 // Stores the hyperperiod for simulation
+extern int hyperPeriod;              // Stores the hyperperiod for simulation
 extern int numTasks;                    // Stores the number of tasks in the list
 
 enum taskState{

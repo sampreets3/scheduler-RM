@@ -99,6 +99,9 @@ void showTaskSet() {
 	while(temp != NULL) {
     printf("\tIdentifier        : %s  \n", temp->taskID);
     printf("\tPriority          : %.2f\n", temp->priority);
+		printf("\tComputation Time  : %.2f\n", temp->compTime);
+    printf("\tPeriod(=Deadline) : %.2f\n", temp->deadline);
+		printf("\tUtility	          : %.2f\n", temp->utility);
 
 		if(temp->state == RUNNING) {
 			printf("\tState             : RUNNING  \n");
@@ -109,13 +112,7 @@ void showTaskSet() {
 		else {
 			printf("\tState             : BLOCKED  \n");
 		}
-
-		printf("\tComputation Time  : %.2f\n", temp->compTime);
-		printf("\tUtility	          : %.2f\n", temp->utility);
-    printf("\tPeriod(=Deadline) : %.2f\n", temp->deadline);
-    printf("\t------ * ------- \n");
+    printf("\t------ * ------- \n\n");
 		temp = temp->tcbNext;
 	}
-
-	printf("[INFO] Number of tasks : %d\n", numTasks);
 }
