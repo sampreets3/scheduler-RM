@@ -3,7 +3,7 @@
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 # scheduler-RM
-Simulation of the behaviour of a Preemptive Fixed Priority Rate Monotonic Scheduler in C
+Simulation of the behaviour of a Preemptive Fixed Priority Rate Monotonic Scheduler in C.
 
 ---
 
@@ -31,7 +31,7 @@ In case you need to delete all executables and start afresh, you can do so with 
 
 ## Contribute
 
-Feel free to request features, and make changes to the project! If you have an idea in mind, you can open an issue and create a pull request to make your changes. The general practice that I follow is `each feature gets its own branch`. It would be great if you could adhere to that.
+Feel free to request features, and make changes to the project! If you have an idea in mind, you can open an issue and create a pull request to make your changes. The general practice that I follow is **each feature gets its own branch**. It would be great if you could adhere to that.
 
 ---
 

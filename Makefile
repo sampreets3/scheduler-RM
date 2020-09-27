@@ -1,13 +1,13 @@
+CXX=g++
 SRCS=src/
 LIBS=lib/
-CC=gcc
-CFLAGS=-I$(LIBS)
 ODIR=build/
-DATA=data/
+CXXFLAGS=-I$(LIBS)
 
-task: $(SRCS)main.c
-	@$(CC) -o $(ODIR)task $(SRCS)main.c $(SRCS)tasks.c $(CFLAGS) -lm
+all:
+	@$(CXX) -o $(ODIR)task $(SRCS)main.cpp $(SRCS)tasks.cpp $(CXXFLAGS)
+	@echo "Build complete. Executable generated in build directory."
 
 .PHONY: clean
 clean:
-	@rm -rf $(ODIR)* $(DATA)*
+	@rm -rf build/*
