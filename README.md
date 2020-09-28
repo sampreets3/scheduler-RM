@@ -1,21 +1,24 @@
+<p style="img-align:center;">
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+</p>
 
 # scheduler-RM
-Simulation of the behaviour of a Preemptive Fixed Priority Rate Monotonic Scheduler in C.
+Simulation of the behavior of a Preemptive Fixed Priority Rate Monotonic Scheduler in C++.
+
 
 ---
 
 ## Overview
-This project focusses on building a preemptive fixed priority rate monotonic task scheduler in C. Done as a part of the **Real-Time Scheduling** course at Ecole Centrale de Nantes. The aim of this project is to create a simulation of a standard RM scheduler in order to gain a better understanding at building Hard Real-Time systems. The choice of scheduling algorithm was kept to be Rate monotonic, since it is the easiest deterministic scheduler to implement. I have tried to design the software to be optimal to the best of my abilities, but if you can provide a more elegant solution, feel free to contribute to this project.
+This project focusses on building a preemptive fixed priority rate monotonic task scheduler in C++. Done as a part of the **Real-Time Scheduling** course at École Centrale de Nantes. The aim of this project is to create a simulation of a standard Rate Monotonic scheduler in order to gain a better understanding at building Hard Real-Time systems. The choice of scheduling algorithm was kept to be Rate Monotonic, since it is the easiest deterministic scheduler to implement. I have tried to design the software to be optimal to the best of my abilities, but if you can provide a more elegant solution, feel free to contribute to this project.
 
 A simple outlook of the algorithm can be as follows:
 > Each task has its own Task Control Block, containing necessary information about the task. The algorithm will assign priorities offline,
 > and simulate for one hyperperiod. At each time interval of the simulation, the task with the highest priority will be executed, until there
 > are no more tasks to be executed.
 
-Also, before generating the schedule, it is imperative that we run schedulability tests on the task set to determine whether it is feasible or not.
+Also, before generating the schedule, it is imperative that we run schedulability tests on the task set to determine whether it is feasible or not. The software runs these schedulability tests on the task set and computes the schedule if and only if the task set is feasible.
 
 ---
 
