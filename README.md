@@ -5,6 +5,9 @@
 # scheduler-RM
 Simulation of the behavior of a Preemptive Fixed Priority Rate Monotonic Scheduler in C++.
 
+<p align="center">
+    <img src="res/screen-output.gif" width="580" height="463">                           
+</a>
 
 ---
 
