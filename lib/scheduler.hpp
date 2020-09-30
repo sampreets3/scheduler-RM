@@ -94,11 +94,11 @@ void printSchedule(std::vector<std::string> s) {
   std::cout << "Task\t|   ";
 
   for(auto elem: s)
-    std::cout << elem ;
+    std::cout << elem << "   ";
 
   std::cout << "\n\nTime\t|   ";
   for(int t = 0; t < computeHyperPeriod(taskSet); t++) {
-    std::cout <<"  " << t << "  ";
+    std::cout << t << "    ";
   }
   std::cout << "\n------------------------------" <<std::endl;
   std::cout << "[INFO] Maximum Processor Idle     : " << idleTime << " time units" <<std::endl;
