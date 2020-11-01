@@ -19,7 +19,7 @@ Before we begin to describe the common functionalities and the design of the sof
 
 In the upcoming sections, we will discuss four main aspects of a scheduler|\textit{viz.}, data acquisiton, schedulability analysis, simulation of the schedule, and evaluation of the metrics. The \texttt{data acquisition} section will deal with the general idea of how to represent the contents of a simulated task to our scheduler, the \texttt{schedulability analysis} will deal with running several schedulability tests on the set of tasks in order to determine whether a given taskset is indeed schedulable or not, the \texttt{simulation} of the schedule would ideally include some representation of how the scheduling algorithm places jobs at each time instant, and the \texttt{metrics} we would want to evaluate will give us a benchmark to compare the performance of our algorithm against other solutions. Some of the metrics that define the efficiency of a scheduler is the number of context switches, the maximum idle time for the processor, and the average response time for each task.
 
-\section{Data Acquisition}
+\section{Data Acquisition}\label{sec:data-acquisition}
 
 In this section, we are interested in obtaining the data from a simulated task, and generating our taskset $\tau$ from this data. If we think in terms of the \textit{(simulated)}scheduler, the only information we need about a task are its identifier, the computation time, the period, and the deadline of the task. Since it has already been established that in our case, the period is equal to the deadline, we can make do with either information. We also understand that we would need some kind of data structure to contain this information in an easily-retrievable fashion. Thus, we can utilize a data structure as shown in Fig. \ref{fig:tcb} below:
 
@@ -46,11 +46,13 @@ We have thus been able to devise a way for the user to define a task to be sched
 
 In the upcoming section, we will focus on performing rigorous schedulability tests on a populated taskset, and let the user know if the schedule is indeed feasible or not.
 
-\section{Schedulability Analysis}
+\section{Schedulability Analysis}\label{sec:sched-analysis}
 
-\section{Simulation Results}
+Our goal in this section is to provide an insight to the feasability of a taskset. In order to do this, we must understand the conditions for schedulability of a taskset, laid out by Liu and Layland\cite{liu-layland}. There are two conditions, the sufficient condition and the necessary condition.
+
+\section{Simulation Results}\label{sec:sim-results}
 The scheduled task set will be simulated from time zero to the first hyperperiod of the task set.
-\section{Evaluation of Main Metrics}
+\section{Evaluation of Main Metrics}\label{sec:main-metrics}
 Important metrics will be displayed. This includes the average response time of each task, the average waiting time, the time of the first deadline miss if any, etc.
 
 \bibliographystyle{unsrt}
