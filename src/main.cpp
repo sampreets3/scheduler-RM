@@ -13,6 +13,7 @@ int main(void){
   showTaskSet();
 
   // Run the scheduler
+  //std::vector <std::string> s = scheduleRM();
   printSchedule(scheduleRM());
   return 0;
 }

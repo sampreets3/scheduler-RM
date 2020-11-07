@@ -4,12 +4,12 @@
 #include <vector>
 
 typedef struct {
-  std::string taskID;
-  int compTime;
-  int period;
-  int remTime;
-  float utility;
-  int isReady;
+  std::string taskID;         // Stores the task identifier
+  int compTime;               // Stores the computation time for the task
+  int period;                 // Stores the period(=deadline) of the task
+  int remTime;                // Stores the remaining execution time of the task
+  float utility;              // Stores the utility of the task
+  int isReady;                // Stores the current state of the task
 } taskControlBlock;
 
 extern std::vector<taskControlBlock> taskSet;
