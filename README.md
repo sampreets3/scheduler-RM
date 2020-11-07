@@ -26,8 +26,10 @@ Also, before generating the schedule, it is imperative that we run schedulabilit
 ## Usage
 1. First, you have to clone the repo onto your local machine : `git clone https://github.com/sampreets3/scheduler-RM.git`
 1. Then, navigate into the project directory by using : `cd scheduler-RM`
-1. You have to create a *build* folder inside of the project directory : `mkdir build`
-1. You can then build the executables using the GNU Make tool :  `make`
+1. You have to create a *build* folder inside of the project directory : `mkdir build && cd build`
+1. You can then generate the Makefile using CMake : `cmake ..`
+1. You will have to run the Makefile to generate the executable: `make`
+1. Finally, you can run the executable using: `./task`
 
 In case you need to delete all executables and start afresh, you can do so with the command : `make clean`
 

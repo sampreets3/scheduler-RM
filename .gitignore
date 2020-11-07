@@ -1,1 +1,6 @@
 build/
+res/code-listing.aux
+res/code-listing.bbl
+res/code-listing.blg
+res/code-listing.log
+res/code-listing.synctex.gz
