@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.10)
+project(scheduler-RM)
+set(CMAKE_CXX_STANDARD 11)
+set(fper)
+find_package(PythonLibs REQUIRED)
+include_directories(${PYTHON_INCLUDE_DIRS})
+include_directories(lib)
+file(GLOB SOURCES src/*.cpp)
+
+add_executable(task ${SOURCES})
+target_link_libraries(task ${PYTHON_LIBRARIES})

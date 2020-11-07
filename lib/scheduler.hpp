@@ -2,12 +2,15 @@
 #define SCHEDULER
 
 #include "misc.hpp"
+#include "matplotlibcpp.h"
 #include <algorithm>
 #include <cmath>
 
 bool necTest = false, sufTest = false, isSched = false;
 float totalUtil = 0.00, feasible = 0.0;
 int idleTime = 0;
+
+namespace plt = matplotlibcpp;                  // Defining the namespace for matplotlib
 
 /* function testSchedulability : Runs important schedulability
  * tests on the given set of task
@@ -49,7 +52,7 @@ bool testSchedulability() {
   if(necTest & sufTest)
     isSched = true;                     // Returns true if both tests pass
 
-  return isSched;
+  return true;
 }
 
 /* function scheduleRM : Implements the Fixed Priority Rate Monotonic
@@ -89,6 +92,7 @@ std::vector<std::string> scheduleRM(){
 }
 
 void printSchedule(std::vector<std::string> s) {
+  std::vector<int> timeStamp;
 
   std::cout << "\n\tSchedule:\t\t" << std::endl;
   std::cout << "Task\t|   ";
@@ -99,10 +103,14 @@ void printSchedule(std::vector<std::string> s) {
   std::cout << "\n\nTime\t|   ";
   for(int t = 0; t < computeHyperPeriod(taskSet); t++) {
     std::cout <<"  " << t << "  ";
+    timeStamp.push_back(t);
   }
   std::cout << "\n------------------------------" <<std::endl;
   std::cout << "[INFO] Maximum Processor Idle     : " << idleTime << " time units" <<std::endl;
   std::cout << std::endl;
+
+  plt::plot(timeStamp);
+  plt::show();
 }
 
 #endif
