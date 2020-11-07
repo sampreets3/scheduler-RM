@@ -48,7 +48,26 @@ In the upcoming section, we will focus on performing rigorous schedulability tes
 
 \section{Schedulability Analysis}\label{sec:sched-analysis}
 
-Our goal in this section is to provide an insight to the feasability of a taskset. In order to do this, we must understand the conditions for schedulability of a taskset, laid out by Liu and Layland\cite{liu-layland}. There are two conditions, the sufficient condition and the necessary condition.
+Our goal in this section is to provide an insight to the feasability of a taskset. In order to do this, we must understand the conditions for schedulability of a taskset, laid out by Liu and Layland\cite{liu-layland}. There are two conditions, the sufficient condition and the necessary condition.\\
+
+\begin{tcolorbox}[title=Necessary Scheduling Condition]
+A taskset $\tau$ is schedulable by a Rate-Monotonic scheduler if and only if:
+\begin{equation}
+  U \leq 1
+\end{equation}
+Where $U$ is the total processor utilisation.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=Sufficient Scheduling Condition]
+A taskset $\tau$ is schedulable by a Rate-Monotonic scheduler if and only if:
+\begin{equation}\label{eqn:sufficient-condition}
+  U \leq n({2}^{\frac{1}{n}} - 1)
+\end{equation}
+
+Where $U$ is the total processor utilisation, and $n$ is the number of tasks in the taskset $\tau$.
+\end{tcolorbox}
+
+From the equation \ref{eqn:sufficient-condition}, we observe that the as the number of tasks increase, the value of $n({2}^{\frac{1}{n}} - 1)$ converges to $ln(2) = 0.693$. Thus, we can make an inference that the rate monotonic scheduler is not the best algorithm for maximising the processor usage. It is however, extremely deterministic in its functioning, which is why it is a widely used scheduler for mission-critical systems.
 
 \section{Simulation Results}\label{sec:sim-results}
 The scheduled task set will be simulated from time zero to the first hyperperiod of the task set.
@@ -59,5 +78,5 @@ Important metrics will be displayed. This includes the average response time of 
 \bibliography{references.bib}
 
 \section*{Appendix}
-
+\input{code-listing}
 \end{document}

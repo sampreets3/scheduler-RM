@@ -2,6 +2,7 @@
 #define SCHEDULER
 
 #include "misc.hpp"
+#include "matplotlibcpp.h"
 #include <algorithm>
 #include <cmath>
 

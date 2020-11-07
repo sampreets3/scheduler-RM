@@ -1,14 +1,3 @@
-\documentclass[11pt]{article}
-
-\usepackage{xcolor}
-\usepackage{graphicx}
-\usepackage{listings}
-\usepackage{tcolorbox}
-\usepackage[utf8]{inputenc}
-\usepackage[margin=15mm]{geometry}
-
-%\tcbuselibrary{skins,breakable}
-
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -33,40 +22,36 @@
 
 \lstset{style=simplecode}
 
-\begin{document}
-
 \section*{Code listing for the software}
 
 The entire source code is split up into multiple files, which are orgainised in the following manner:
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.65]{imgs/hierarchy}
+	\includegraphics[scale=0.65]{../imgs/hierarchy}
 \end{figure}
 
 
 \begin{tcolorbox}[title=\textbf{main.cpp}: This is the main application which the user will interact with.]
-\lstinputlisting[language=c]{../src/main.cpp}
+\lstinputlisting[language=c]{../../src/main.cpp}
 \end{tcolorbox}
 
 
 \begin{tcolorbox}[title=\textbf{tasks.hpp} : This file contains the definition for the taskControlBlock structure and various functions that pertains to the manipulation of a task.]
-\lstinputlisting[language=c]{../lib/tasks.hpp}
+\lstinputlisting[language=c]{../../lib/tasks.hpp}
 \end{tcolorbox}
 
 \begin{tcolorbox}[title=\textbf{tasks.cpp} : This file contains the source code for the functions defined in \texttt{lib/tasks.hpp}]
-\lstinputlisting[language=c]{../src/tasks.cpp}
+\lstinputlisting[language=c]{../../src/tasks.cpp}
 \end{tcolorbox}
 
 \begin{tcolorbox}[title=\textbf{misc.hpp}: This is a small file with helper functions pertaining to a more general use case.]
-\lstinputlisting[language=c]{../lib/misc.hpp}
+\lstinputlisting[language=c]{../../lib/misc.hpp}
 \end{tcolorbox}
 
 \begin{tcolorbox}[title=\textbf{scheduler.hpp}: This file contains all the important functions and parameters related to the scheduler.]
-\lstinputlisting[language=c, firstline=1, lastline=54]{../lib/scheduler.hpp}
+\lstinputlisting[language=c, firstline=1, lastline=54]{../../lib/scheduler.hpp}
 \end{tcolorbox}
 
 \begin{tcolorbox}[title=\textbf{scheduler.hpp}\textit{(contd.)}]
-\lstinputlisting[language=c, firstline=55]{../lib/scheduler.hpp}
+\lstinputlisting[language=c, firstline=55]{../../lib/scheduler.hpp}
 \end{tcolorbox}
-
-\end{document}
