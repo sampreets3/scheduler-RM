@@ -108,10 +108,6 @@ void printSchedule(std::vector<std::string> s) {
   std::cout << "\n------------------------------" <<std::endl;
   std::cout << "[INFO] Maximum Processor Idle     : " << idleTime << " time units" <<std::endl;
   std::cout << std::endl;
-
-  // plot the results
-  plt::plot(timeStamp);
-  plt::show();
 }
 
 #endif

@@ -5,9 +5,9 @@
 int main(void){
 
   // Create three tasks
-  createTask("T1", 3, 20);
-  createTask("T2", 2, 5);
-  createTask("T3", 2, 10);
+  createTask("T1", 2, 8);
+  createTask("T2", 4, 16);
+  createTask("T3", 1, 4);
 
   // Show the set of tasks
   showTaskSet();
