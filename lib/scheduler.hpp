@@ -12,6 +12,26 @@ int idleTime = 0;
 
 namespace plt = matplotlibcpp;                  // Defining the namespace for matplotlib
 
+void evaluateMetrics() {
+
+  //calculate number of releases:
+  std::vector<double> noOfReleases;
+  double hp = (double)computeHyperPeriod(taskSet);
+  std::cout << std::endl;
+
+  std::cout << std::endl;
+  std::cout << "------EVALUATION OF METRICS----------" << std::endl;
+  std::cout << "[INFO] Total number of Releases(Task-wise): " << std::endl;
+
+  for(auto elem: taskSet){
+    std::cout << "\tTask\t" << elem.taskID << "->" << (int)hp/elem.period << std::endl;
+  }
+
+  std::cout << "[INFO] Maximum Processor Idle     : " << idleTime << " time units" <<std::endl;
+
+  std::cout << std::endl;
+}
+
 /* function testSchedulability : Runs important schedulability
  * tests on the given set of task
  */
@@ -105,9 +125,8 @@ void printSchedule(std::vector<std::string> s) {
     std::cout <<"  " << t << "  ";
     timeStamp.push_back(t);
   }
-  std::cout << "\n------------------------------" <<std::endl;
-  std::cout << "[INFO] Maximum Processor Idle     : " << idleTime << " time units" <<std::endl;
-  std::cout << std::endl;
+  evaluateMetrics();
 }
+
 
 #endif

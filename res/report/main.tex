@@ -221,7 +221,43 @@ We can observe from the taskset that the total processor utilisation here will b
 \end{figure}
 \pagebreak
 \section{Evaluation of Main Metrics}\label{sec:main-metrics}
-Important metrics will be displayed. This includes the average response time of each task, the average waiting time, the time of the first deadline miss if any, etc.
+ In this section we will evaluate the main metrics for the scheduler. This will give us more information about the performance of each task during the scheduling.\\
+
+ We will see in the code the following evaluation of metrics:
+ \begin{itemize}
+
+  \item \begin{equation}
+          \mbox{Number of Releases, } N_i = \frac{Hyperperiod(\tau)}{Period(\tau_{i})} \forall\;\tau_{i} \in \;\tau
+        \end{equation}
+
+ \item \begin{equation}
+          \mbox{Total Idle Time, } T_{idle} = Hyperperiod(\tau) - (U \cdot Hyperperiod(\tau))
+       \end{equation}
+
+ \item
+      \begin{equation}
+            \mbox{Release Time, }R_i = j \cdot \mbox{Period}(i), \;\;\;\forall \;i \in \mbox{ Number of tasks in }\tau
+       \end{equation}
+
+  \item
+      \begin{equation}
+          \mbox{Waiting Time, } W_i = \mbox{Start Time}(\tau_i) - \mbox{Release Time}(\tau_i)
+      \end{equation}
+\end{itemize}
+
+These metrics have been evaluated using a simple function, called \texttt{evaluateMetrics}, a part of which is shown in the listing below:
+\lstinputlisting[language=c, firstline=15, lastline=33]{../../lib/scheduler.hpp}
+
+\section{Conclusion}
+The aim of this project was to gain an understanding about how a rate-monotonic scheduler functions. We have been able to explore the core principles of a Fixed-Priority Rate Monotonic Scheduler in some detail, where we saw how we can conceptualise a simple task control block, how to store this information in a structured format, and how to facilitate creation, addition, deletion, and sorting of the tasks internally with the list of tasks using C++ STL classes.\\
+
+In the next section, we gained insight on how we would acquire data for our scheduler, highlighting the branching out of source code into multiple files, enabling file input/output, and in general giving it a more application feel. Once we had acquired the data, we wanted to check if the taskset was indeed feasible or not before trying to compute a schedule for it. For this purpose, we made use of the necessary and sufficient schedulability checks, and learnt how to compute them by solving an example by ourselves.\\
+
+Finally, when the schedule had been computed, we had to display the main metrics and evaluate our scheduler against the rest of the schedulers out there. We saw a very simple method of comparision, and how we can achieve that in code.\\
+
+As far as proposed updates are concerned, the popular plotting library matplotlib will be included in order to directly provide the GANTT diagrams. Work is also underway with extrapolation of this software to incorporate multi-processor based scheduling.\\
+
+Overall, it was an extremely enriching experience, which has helped us understand not only the basics of rate monotonic scheduling, but also about software development practices in general.
 
 \bibliographystyle{unsrt}
 \bibliography{references.bib}
