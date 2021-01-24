@@ -43,11 +43,11 @@ bool testSchedulability() {
     totalUtil += elem.utility;            // Iterate through the task set and compute the total utilisation
 
   feasible = taskSet.size() * (std::pow(2, 1/(double)taskSet.size()) - 1);
-  std::cout << "[INFO] Number of tasks            : " << taskSet.size() << std::endl;
-  std::cout << "[INFO] Hyperperiod is             : " << computeHyperPeriod(taskSet) << " time units" << std::endl;
-  std::cout << "[INFO] Tota Processor Utilisation : " << totalUtil << std::endl;
-  std::cout << "[INFO] Feasibility Metric is      : " << feasible << std::endl;
-  std::cout << "[INFO] Running Sufficient Test    : ";
+  std::cout << "[INFO] Number of tasks             : " << taskSet.size() << std::endl;
+  std::cout << "[INFO] Hyperperiod is              : " << computeHyperPeriod(taskSet) << " time units" << std::endl;
+  std::cout << "[INFO] Total Processor Utilisation : " << totalUtil << std::endl;
+  std::cout << "[INFO] Feasibility Metric is       : " << feasible << std::endl;
+  std::cout << "[INFO] Running Sufficient Test     : ";
   if(totalUtil < feasible) {              // Sufficient schedulability test
     std::cout << "PASSED" << std::endl;
     sufTest = true;
@@ -57,7 +57,7 @@ bool testSchedulability() {
     sufTest = false;
   }
 
-  std::cout << "[INFO] Running Necessary Test     : ";
+  std::cout << "[INFO] Running Necessary Test      : ";
   if(totalUtil < 1.0) {                   // Necessary schedulability test
     std::cout << "PASSED" << std::endl;
     necTest = true;
