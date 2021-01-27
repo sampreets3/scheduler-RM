@@ -1,7 +1,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![HitCount](http://hits.dwyl.com/sampreets3/scheduler-RM.svg)](http://hits.dwyl.com/sampreets3/scheduler-RM)
+
 # scheduler-RM
 Simulation of the behavior of a Preemptive Fixed Priority Rate Monotonic Scheduler in C++.
 

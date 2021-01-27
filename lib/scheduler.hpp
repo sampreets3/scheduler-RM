@@ -84,7 +84,7 @@ std::vector<std::string> scheduleRM(){
   int hp = computeHyperPeriod(taskSet);
   int n = taskSet.size();
   sort(taskSet.begin(), taskSet.end(), comparePeriod);      // Sort the task set in ascending order of period
-
+  
   if(testSchedulability()){                                 // If the task list is schedulable, then go on
     for(int i=0 ; i< hp ; i++){
       if(i>=taskSet[0].period)

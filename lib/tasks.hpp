@@ -10,6 +10,7 @@ typedef struct {
   int remTime;                // Stores the remaining execution time of the task
   float utility;              // Stores the utility of the task
   int isReady;                // Stores the current state of the task
+  int priority;               // Stores the priority of the task
 } taskControlBlock;
 
 extern std::vector<taskControlBlock> taskSet;
